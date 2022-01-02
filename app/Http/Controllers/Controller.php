@@ -10,4 +10,15 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    /**
+     * @var AppConstants
+     */
+    public $constant;
+
+    public function __construct()
+    {
+        $this->constant = new AppConstants();
+    }
+
 }
